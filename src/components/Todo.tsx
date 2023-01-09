@@ -1,4 +1,4 @@
-import { PlusCircle, ClipboardText } from 'phosphor-react'
+import { PlusCircle, ClipboardText, Trash } from 'phosphor-react'
 
 import styles from './Todo.module.css'
 
@@ -22,11 +22,32 @@ export function Todo() {
         </div>
       </div>
 
-      <div className={styles.emptyTasks}>
-        <ClipboardText size={56}/>
-        <p>Você ainda não tem tarefas cadastradas</p>
-        <p>Crie tarefas e organize seus itens a fazer</p>
+      <div className={styles.areaTasks}>
+        <input type="radio" name="" id="check" />
+        <label htmlFor="check">Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</label>
+        <button><Trash size={24}/></button>
       </div>
+
+      <div className={styles.areaTasks}>
+        <input type="radio" name="" id="check-1" />
+        <label htmlFor="check-1">Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</label>
+        <button><Trash size={24}/></button>
+      </div>
+
+      <div className={styles.areaTasks}>
+        <input type="radio" name="" id="check-2" />
+        <label htmlFor="check-2">Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</label>
+        <button><Trash size={24}/></button>
+      </div>
+
+
+
+
+      {/* <div className={styles.emptyTasks}>
+        <ClipboardText size={56}/>
+        <p>Você ainda não tem tarefas cadastradas <br />
+        <span>Crie tarefas e organize seus itens a fazer</span></p>
+      </div> */}
     </div>
   )
 }
