@@ -1,0 +1,63 @@
+.todo {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 46rem;
+  margin-top: -1.5rem;
+}
+
+.todo input {
+  width: 100%;
+  padding: 0.8rem;
+  background: var(--gray-400);
+  border: 0;
+  resize: none;
+  border-radius: 8px;
+  outline: none;
+}
+
+.todo input::placeholder{
+  color: var(--gray-300);
+}
+
+.todo button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  border: 0;
+  resize: none;
+  border-radius: 8px;
+  font-size: 14px;
+  padding: 0.75rem;
+  background: var(--blue-dark);
+  color: var(--gray-100);
+  cursor: pointer;
+
+  transition: 200ms;
+}
+
+.todo button:hover {
+  background: var(--blue);
+}
+
+.tasks {
+  margin-top: 2rem;
+  padding-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--gray-400);
+}
+
+.tasks p {
+  color: var(--blue-dark);
+  font-weight: bold;
+}
+
+.tasks p span {
+  background: var(--gray-300);
+  color: var(--gray-100);
+  border-radius: 8px;
+  padding: 0.1rem 0.6rem;
+}
+
