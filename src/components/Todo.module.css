@@ -49,15 +49,48 @@
   border-bottom: 1px solid var(--gray-400);
 }
 
-.tasks p {
+.createTasks {
+  display: flex;
+  gap: 0.5rem;
   color: var(--blue-dark);
   font-weight: bold;
+  font-size: 0.875rem;
 }
 
-.tasks p span {
+.finishTasks {
+  display: flex;
+  gap: 0.5rem;
+  color: var(--purple);
+  font-weight: bold;
+  font-size: 0.875rem;
+}
+
+.tasks span {
   background: var(--gray-300);
   color: var(--gray-100);
   border-radius: 8px;
   padding: 0.1rem 0.6rem;
 }
+
+.emptyTasks{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 1.5rem;
+  line-height: 1;
+  color: var(--gray-100);
+}
+
+.emptyTasks p {
+  margin-top: 1rem;
+}
+
+.emptyTasks p:last-child {
+  font-size: 0.875rem;
+  color: var(--gray-300);
+}
+
+
+
+
 
