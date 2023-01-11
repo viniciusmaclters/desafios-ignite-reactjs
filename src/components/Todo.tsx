@@ -1,11 +1,26 @@
-import { PlusCircle, ClipboardText, Trash } from 'phosphor-react'
+import { PlusCircle, ClipboardText} from 'phosphor-react'
+import { FormEvent, useState } from 'react'
+import { Comment } from './Comment'
 
 import styles from './Todo.module.css'
 
 export function Todo() {
+  const [comments, setComments] = useState([
+    'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.'
+  ])
+
+  const [newCommentText, setNewCommentText] = useState('')
+
+  function handleCreateNewComment(event: FormEvent) {
+    event.preventDefault()
+
+    setComments([...comments, newCommentText])
+    setNewCommentText('')
+  }
+
   return (
     <div>
-      <form className={styles.todo}>
+      <form onSubmit={handleCreateNewComment} className={styles.todo}>
         <input type="text" name="" id="" placeholder='Adicione uma tarefa'/>
         <button type='submit'>Criar <PlusCircle size={16} /></button>
       </form>
@@ -22,23 +37,12 @@ export function Todo() {
         </div>
       </div>
 
-      <div className={styles.areaTasks}>
-        <input type="radio" name="" id="check" />
-        <label htmlFor="check">Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</label>
-        <button><Trash size={24}/></button>
+      <div>
+        {comments.map(comment => {
+          return <Comment />
+        })}
       </div>
 
-      <div className={styles.areaTasks}>
-        <input type="radio" name="" id="check-1" />
-        <label htmlFor="check-1">Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</label>
-        <button><Trash size={24}/></button>
-      </div>
-
-      <div className={styles.areaTasks}>
-        <input type="radio" name="" id="check-2" />
-        <label htmlFor="check-2">Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</label>
-        <button><Trash size={24}/></button>
-      </div>
 
 
 
