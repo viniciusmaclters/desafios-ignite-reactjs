@@ -1,5 +1,5 @@
 import { PlusCircle, ClipboardText} from 'phosphor-react'
-import { FormEvent, useState } from 'react'
+import { ChangeEvent, FormEvent, useState } from 'react'
 import { Comment } from './Comment'
 
 import styles from './Todo.module.css'
@@ -18,10 +18,22 @@ export function Todo() {
     setNewCommentText('')
   }
 
+  function handleNewCommentChange(event: ChangeEvent<HTMLTextAreaElement>) {
+    setNewCommentText(event.target.value)
+  }
+
+  function deleteComment(commentToDelete: string) {
+    const commentsWithoutDeletedOne = comments.filter(comment => {
+      return comment !== commentToDelete
+    })
+
+    setComments(commentsWithoutDeletedOne)
+  }
+
   return (
     <div>
       <form onSubmit={handleCreateNewComment} className={styles.todo}>
-        <input type="text" name="" id="" placeholder='Adicione uma tarefa'/>
+        <textarea wrap='off' onChange={handleNewCommentChange} value={newCommentText} placeholder='Adicione uma tarefa' />
         <button type='submit'>Criar <PlusCircle size={16} /></button>
       </form>
 
@@ -39,7 +51,13 @@ export function Todo() {
 
       <div>
         {comments.map(comment => {
-          return <Comment />
+          return (
+            <Comment 
+              key={comment} 
+              content={comment} 
+              onDeleteComment={deleteComment} 
+            />
+          )
         })}
       </div>
 

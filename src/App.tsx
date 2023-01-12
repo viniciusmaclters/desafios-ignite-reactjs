@@ -4,13 +4,26 @@ import { Todo } from './components/Todo'
 
 import './global.css'
 
+
+const todos = [
+ { 
+    id: 1,
+  }
+]
+
 export function App() {
   return (
     <>
       <Header />
 
       <div className={styles.wrapper}>
-          <Todo />
+          {todos.map(todo => {
+            return (
+              <Todo
+                key={todo.id}
+              /> 
+            )
+          })}
       </div>
     </>
   )
