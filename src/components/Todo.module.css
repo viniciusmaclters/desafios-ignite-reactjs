@@ -1,77 +1,41 @@
-.todo {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  width: 46rem;
-  margin-top: -1.5rem;
-}
-
-.todo textarea {
-  width: 100%;
-  padding: 0.3rem;
-  background: var(--gray-400);
-  border: 0;
-  resize: none;
-  border-radius: 8px;
-  outline: none;
-}
-
-.todo textarea::placeholder{
-  padding: 0.8rem;
-  color: var(--gray-300);
-  font-family: 'Inter', sans-serif;
-}
-
-.todo button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.3rem;
-  border: 0;
-  resize: none;
-  border-radius: 8px;
-  font-size: 14px;
-  padding: 0.75rem;
-  background: var(--blue-dark);
-  color: var(--gray-100);
-  cursor: pointer;
-
-  transition: 200ms;
-}
-
-.todo button:hover {
-  background: var(--blue);
-}
-
 .tasks {
-  margin-top: 2rem;
-  padding-bottom: 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--gray-400);
+  width: 100%;
+  max-width: 46rem;
+  margin: 0 auto;
+  margin-top: 5.625rem;
+  padding: 0 1rem;
 }
 
 .createTasks {
   display: flex;
-  gap: 0.5rem;
-  color: var(--blue-dark);
-  font-weight: bold;
-  font-size: 0.875rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
 }
 
-.finishTasks {
+.createTasks > div {
   display: flex;
-  gap: 0.5rem;
-  color: var(--purple);
-  font-weight: bold;
-  font-size: 0.875rem;
+  align-items: center;
+  gap: 0.8rem;
 }
 
-.tasks span {
-  background: var(--gray-300);
-  color: var(--gray-100);
-  border-radius: 8px;
-  padding: 0.1rem 0.6rem;
+.createTasks p {
+  color: var(--blue);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.createTasks span {
+  background: var(--gray-400);
+  color: var(--gray-200);
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.finishTasks p {
+  color: var(--purple);
 }
 
 .emptyTasks{
